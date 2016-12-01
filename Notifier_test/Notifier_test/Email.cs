@@ -8,11 +8,10 @@ using System.Net.Mime;
 using System.Net;
 using System.Collections;
 
-namespace EmailNotifier_1
+namespace Notifier_test
 {
     class Email
     {
-
         public static void sendMessage()
         {
 

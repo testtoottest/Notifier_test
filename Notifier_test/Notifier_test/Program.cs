@@ -10,7 +10,6 @@ namespace Notifier_test
     {
         static void Main(string[] args)
         {
-
         }
     }
 }
