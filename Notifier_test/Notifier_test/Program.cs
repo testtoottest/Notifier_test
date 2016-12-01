@@ -10,7 +10,10 @@ namespace Notifier_test
     {
         static void Main(string[] args)
         {
-            Email.sendMessage();
+            //Email.sendMessage();
+            TextMessage.sendMessage();
+            Console.ReadKey();
+
         }
     }
 }
