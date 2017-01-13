@@ -1,28 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextmagicRest;
-using TextmagicRest.Model;
 
 namespace Notifier_test
 {
     class TextMessage
     {
-        public static void sendMessage()
-        {
-            var client = new Client("test", "my-api-key");
-            var link = client.SendMessage("Hello from TextMagic API", "48667977867");
-            if (link.Success)
+        public static void send() {
+            using (System.Net.WebClient client = new System.Net.WebClient())
             {
-                Console.WriteLine("Message ID {0} has been successfully sent", link.Id);
-            }
-            else
-            {
-                Console.WriteLine("Message was not sent due to following exception: {0}", link.ClientException.Message);
-          }
-        }
+                string userName = "testtoottest@gmail.com";
+                string password = "1f906";
+                string msgSender = "48667977867";
+                string msgReceiver = "48667977867";
+                string message = "test";
 
-    }
+                string url = "http://smsc.vianett.no/v3/send.ashx?" +
+                "src=" + msgSender +
+                "&dst=" + msgReceiver +
+                "&msg=" + System.Web.HttpUtility.UrlEncode
+                (message, System.Text.Encoding.GetEncoding("ISO-8859-1")) +
+                "&username=" + System.Web.HttpUtility.UrlEncode(userName) +
+                "&password=" + password;
+
+                string result = client.DownloadString(url);
+                if (result.Contains("OK"))
+                {
+                    Console.WriteLine("Sms sent successfully", "Message");
+                }
+                else
+                {
+                    Console.WriteLine("Some issue delivering", "Message");
+                }
+            }
+
+            Console.ReadKey();
+            }
+      }
 }
+

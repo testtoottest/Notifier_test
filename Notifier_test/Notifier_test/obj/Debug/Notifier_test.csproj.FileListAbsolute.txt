@@ -1,1 +1,2 @@
 C:\Users\zieln\OneDrive\Dokumenty\GitHub\Notifier_test\Notifier_test\Notifier_test\bin\Debug\Notifier_test.exe.config
+C:\Users\zieln\Desktop\git_test\Notifier_test\Notifier_test\Notifier_test\bin\Debug\Notifier_test.exe.config
